@@ -42,18 +42,10 @@ let questions = [
     // choiceC: 'Correct',
     correct: 'B'
   },
-  {
-    question: 'Dogs see in black and white',
-    imgSrc: 'img/dog.jpg',
-    choiceA: 'True',
-    choiceB: 'False',
-    // choiceC: 'Correct',
-    correct: 'B'
-  },
 
   {
     question: 'All sushi is raw fish',
-    imgSrc: 'img/cow.jpg',
+    imgSrc: 'img/sushi.jpg',
     choiceA: 'True',
     choiceB: 'False',
     // choiceC: 'Correct',
@@ -165,7 +157,7 @@ function scoreRender() {
 
   // scoreDiv.innerHTML = '<img src=' + img + '>';
   // scoreDiv.innerHTML = '<p>' + scorePercent + '</p>';
-  if (scorePercent < 80) {
+  if (scorePercent < 60) {
     scoreDiv.innerHTML =
       '<p class=your-score> You scored ' +
       scorePercent +
