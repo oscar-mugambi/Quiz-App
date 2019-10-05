@@ -20,10 +20,10 @@ body {
   animation-duration: 2.5s;
 }
 #start {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bolder;
   word-break: break-all;
-  width: 200px;
+  width: 240px;
   height: 150px;
   border: 5px solid rgb(255, 255, 255);
   border-radius: 15px;
