@@ -20,7 +20,7 @@ body {
   animation-duration: 2.5s;
 }
 #start {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: bolder;
   word-break: break-all;
   width: 240px;
@@ -37,7 +37,7 @@ body {
 
 #start p {
   position: absolute;
-  left: 12px;
+  left: 37px;
   top: 20px;
 }
 
