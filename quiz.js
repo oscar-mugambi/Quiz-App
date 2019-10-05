@@ -49,7 +49,7 @@ let questions = [
     choiceA: 'True',
     choiceB: 'False',
     // choiceC: 'Correct',
-    correct: 'A'
+    correct: 'B'
   }
 ];
 
@@ -116,6 +116,7 @@ function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     score++;
     answerIsCorrect();
+    console.log(score);
   } else {
     answerIsWrong();
   }
@@ -146,7 +147,8 @@ function scoreRender() {
   if (scorePercent < 50) {
     scoreDiv.innerHTML = `<p> You scored ${scorePercent}%<br> <span class= "your-score">You silly goose :) </span></p>`;
   } else {
-    scoreDiv.innerHTML = `<p>Not too shabby <br>${scorePercent}%</p>`;
+    scoreDiv.innerHTML = `<p>You scored<br>${scorePercent}%<br>
+    <span class= "your-score">Not too shabby :) </span></p>`;
   }
 }
 
