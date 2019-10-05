@@ -65,8 +65,8 @@ let TIMER;
 function renderQuestion() {
   let q = questions[runningQuestion];
 
-  question.innerHTML = '<p>' + q.question + '</p>';
   qImg.innerHTML = '<img src =' + q.imgSrc + '>';
+  question.innerHTML = '<p>' + q.question + '</p>';
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   // choiceC.innerHTML = q.choiceC;
@@ -162,7 +162,7 @@ function scoreRender() {
       '<p class=your-score> You scored ' +
       scorePercent +
       '% <br><span class= "your-score">You silly goose :) </span></></p>';
-  } else if (scorePercent > 80) {
+  } else if (scorePercent > 60) {
     scoreDiv.innerHTML =
       '<p> You scored ' +
       scorePercent +
