@@ -64,12 +64,17 @@ let TIMER;
 
 function renderQuestion() {
   let q = questions[runningQuestion];
-
   qImg.innerHTML = '<img src =' + q.imgSrc + '>';
+  setTimeout(renderRest);
+
+  // choiceC.innerHTML = q.choiceC;
+}
+
+function renderRest() {
+  let q = questions[runningQuestion];
   question.innerHTML = '<p>' + q.question + '</p>';
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
-  // choiceC.innerHTML = q.choiceC;
 }
 
 start.addEventListener('click', startQuiz);
@@ -84,7 +89,7 @@ function startQuiz() {
 
 function renderProgress() {
   for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-    progress.innerHTML += "<div class='prog' id=" + qIndex + '></div>';
+    progress.innerHTML += `<div class='prog' id=${qIndex}></div>`;
   }
 }
 
@@ -132,40 +137,46 @@ function answerIsCorrect() {
 
 function answerIsWrong() {
   document.getElementById(runningQuestion).style.backgroundColor = 'red';
-  let q = questions[runningQuestion];
-  // if ('A' === q.correct) {
-  //   document.getElementById('A').style.backgroundColor = 'green';
-  // } else if ('B' === q.correct) {
-  //   document.getElementById('A').style.backgroundColor = 'green';
-  // }
 }
 function scoreRender() {
+  quiz.style.display = 'none';
   scoreDiv.style.display = 'block';
   const scorePercent = Math.round((100 * score) / questions.length);
-  let img =
-    scorePercent >= 80
-      ? 'img/5.png'
-      : scorePercent >= 60
-      ? 'img/4.png'
-      : scorePercent >= 40
-      ? 'img/3.png'
-      : scorePercent >= 20
-      ? 'img/2.png'
-      : scorePercent >= 80
-      ? 'img/5.png'
-      : 'img/1.png';
 
-  // scoreDiv.innerHTML = '<img src=' + img + '>';
-  // scoreDiv.innerHTML = '<p>' + scorePercent + '</p>';
-  if (scorePercent < 60) {
-    scoreDiv.innerHTML =
-      '<p class=your-score> You scored ' +
-      scorePercent +
-      '% <br><span class= "your-score">You silly goose :) </span></></p>';
-  } else if (scorePercent > 60) {
-    scoreDiv.innerHTML =
-      '<p> You scored ' +
-      scorePercent +
-      '%!!<br><span> Smarty Pants </span></></p>';
+  if (scorePercent < 50) {
+    scoreDiv.innerHTML = `<p> You scored ${scorePercent}%<br> <span class= "your-score">You silly goose :) </span></p>`;
+  } else {
+    scoreDiv.innerHTML = `<p>Not too shabby <br>${scorePercent}%</p>`;
   }
 }
+
+// let img =
+//   scorePercent >= 80
+//     ? 'img/5.png'
+//     : scorePercent >= 60
+//     ? 'img/4.png'
+//     : scorePercent >= 40
+//     ? 'img/3.png'
+//     : scorePercent >= 20
+//     ? 'img/2.png'
+//     : scorePercent >= 80
+//     ? 'img/5.png'
+//     : 'img/1.png';
+
+//   if (scorePercent < 60) {
+//     scoreDiv.innerHTML =
+//       '<p class="remark"> You scored ' +
+//       scorePercent +
+//       '% <br><span class= "your-score">You silly goose :) </span></br></p>';
+//   } else if (scorePercent > 60) {
+//     scoreDiv.innerHTML =
+//       '<p class="remark"> You scored ' +
+//       scorePercent +
+//       '%!!<br><span> Smarty Pants </span></></p>';
+//   }
+// }
+// scoreDiv.addEventListener('click', e => {
+//   setTimeout(() => {
+//     document.location.reload();
+//   }, 1000);
+// });

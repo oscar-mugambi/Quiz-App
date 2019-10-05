@@ -76,6 +76,8 @@ body {
   margin: 0;
   padding: 15px;
   font-size: 1.25em;
+  animation-name: question;
+  animation-duration: 2s;
 }
 
 #choices {
@@ -217,4 +219,23 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes question {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+p .remark {
+  color: aliceblue;
+  z-index: 5;
 }
